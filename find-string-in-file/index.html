@@ -32,7 +32,7 @@
 <meta property="og:description" content="Linux1grep -r [문자열] [파일들]   현재 폴더에 있는 test 파일 내부에서 &quot;apple&quot; 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; .&#x2F;test  home 폴더부터 하위 모든 파일 내부에서 &quot;apple&quot; 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; ~&#x2F;*  home 폴더부">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2020-09-28T14:26:50.000Z">
-<meta property="article:modified_time" content="2020-09-28T15:21:32.805Z">
+<meta property="article:modified_time" content="2020-09-30T05:24:41.036Z">
 <meta property="article:author" content="YunGoon">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="/images/bg.png">
@@ -143,17 +143,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그<span class="badge">2</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -212,7 +212,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">1.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-number">2.</span> <span class="nav-text">Windows</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">1.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows"><span class="nav-number">2.</span> <span class="nav-text">Windows</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -228,7 +228,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -241,7 +241,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -358,7 +358,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r [문자열] [파일들]</span><br></pre></td></tr></table></figure>
+        <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r [문자열] [파일들]</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>현재 폴더에 있는 test 파일 내부에서 &quot;apple&quot; 문자열 찾기</p>
@@ -371,11 +371,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">&#x27;apple&#x27;</span> ~/* --include *.txt</span><br></pre></td></tr></table></figure>
 
 
-
-
 </li>
 </ul>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /M [문자열] *.*</span><br></pre></td></tr></table></figure>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /M [문자열] *.*</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>현재 폴더에 있는 모든 파일 내부에서 &quot;banana&quot; 문자열이 들어있는 파일명 찾기</p>

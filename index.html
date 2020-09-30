@@ -141,17 +141,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그<span class="badge">2</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -225,7 +225,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -238,7 +238,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -286,6 +286,102 @@
       
 
       
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://yundev.ga/pq-delete-element/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="YunGoon">
+      <meta itemprop="description" content="Thinking and Coding">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YunDev">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/pq-delete-element/" class="post-title-link" itemprop="url">우선순위 큐에서 임의의 요소 삭제하기</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2020-09-30 13:19:53" itemprop="dateCreated datePublished" datetime="2020-09-30T13:19:53+09:00">2020-09-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">카테고리</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/tip/" itemprop="url" rel="index"><span itemprop="name">tip</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/pq-delete-element/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="pq-delete-element/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h1><p>우선순위 큐는 보통 힙 자료구조를 사용해 구현됩니다.<br>힙은 최댓값 및 최솟값을 빠르게 찾아내기 위한 완전이진트리 기반의 자료구조입니다.</p>
+<p>힙에서는 최댓값 및 최솟값이 top에 위치하게 되며, 이를 참조하는 데에는 상수시간이 걸립니다.<br>하지만 top을 제외한 나머지 요소들은 인터페이스 상 참조할 방법이 없습니다.<br>이때 필요에 의해서 힙에 들어있는 어떤 임의의 요소를 삭제할 상황이 생기면 어떻게 해야할까요?</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/pq-delete-element/#more" rel="contents">
+                더 읽어보기 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
     
 
 
@@ -355,7 +451,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><p>C++에서 priority_queue를 이용해 값을 넣으면 기본적으로 가장 큰 값이 top으로 올라옵니다.<br>만약 가장 작은 값이 top으로 오게 하고 싶으면 functional 헤더의 greater를 사용하면 됩니다.<br>사용법은 다음과 같습니다.</p>
+          <h1 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h1><p>C++에서 priority_queue를 이용해 값을 넣으면 기본적으로 가장 큰 값이 top으로 올라옵니다.<br>만약 가장 작은 값이 top으로 오게 하고 싶으면 functional 헤더의 greater를 사용하면 됩니다.<br>사용법은 다음과 같습니다.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; maxPQ;</span><br><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; minPQ;</span><br></pre></td></tr></table></figure>
 
 <p>겨우 작은 값이 올라오도록 원했을 뿐인데 vector에 greater에 여러가지를 써야합니다.<br>이보다 더 간단한 방법은 없을까요?</p>
@@ -453,7 +549,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r [문자열] [파일들]</span><br></pre></td></tr></table></figure>
+          <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r [문자열] [파일들]</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>현재 폴더에 있는 test 파일 내부에서 &quot;apple&quot; 문자열 찾기</p>
@@ -466,11 +562,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">&#x27;apple&#x27;</span> ~/* --include *.txt</span><br></pre></td></tr></table></figure>
 
 
-
-
 </li>
 </ul>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /M [문자열] *.*</span><br></pre></td></tr></table></figure>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /M [문자열] *.*</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>현재 폴더에 있는 모든 파일 내부에서 &quot;banana&quot; 문자열이 들어있는 파일명 찾기</p>
