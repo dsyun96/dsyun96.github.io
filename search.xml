@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>빠른 거듭제곱</title>
+      <link href="binary-exponentiation/"/>
+      <url>binary-exponentiation/</url>
+      
+        <content type="html"><![CDATA[<h1 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h1><p>$$a^n$$</p><p>$$\sum_{i=0}^{N} i^2 \eq \frac{N(N+1)(2N+1)}{6}$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mathematics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>우선순위 큐에서 임의의 요소 삭제하기</title>
       <link href="pq-delete-element/"/>
       <url>pq-delete-element/</url>

@@ -24,21 +24,22 @@
     var CONFIG = {"hostname":"yundev.ga","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"검색할 키워드를 입력하세요","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits}개의 검색결과"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="404">
-<meta property="og:type" content="website">
-<meta property="og:title" content="YunDev">
-<meta property="og:url" content="https://yundev.ga/404.html">
+  <meta name="description" content="개요$$a^n$$ $$\sum_{i&#x3D;0}^{N} i^2 \eq \frac{N(N+1)(2N+1)}{6}$$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="빠른 거듭제곱">
+<meta property="og:url" content="https://yundev.ga/binary-exponentiation/index.html">
 <meta property="og:site_name" content="YunDev">
-<meta property="og:description" content="404">
+<meta property="og:description" content="개요$$a^n$$ $$\sum_{i&#x3D;0}^{N} i^2 \eq \frac{N(N+1)(2N+1)}{6}$$">
 <meta property="og:locale" content="ko_KR">
-<meta property="article:published_time" content="2020-09-29T10:51:00.917Z">
-<meta property="article:modified_time" content="2020-09-29T10:50:54.460Z">
+<meta property="article:published_time" content="2020-10-01T07:45:36.000Z">
+<meta property="article:modified_time" content="2020-10-01T08:02:15.749Z">
 <meta property="article:author" content="YunGoon">
+<meta property="article:tag" content="mathematics">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="/images/bg.png">
 
 
-<link rel="canonical" href="https://yundev.ga/404">
+<link rel="canonical" href="https://yundev.ga/binary-exponentiation/">
 
 
 <script class="page-configurations">
@@ -46,13 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'ko'
   };
 </script>
 
-  <title> | YunDev
-</title>
+  <title>빠른 거듭제곱 | YunDev</title>
   
 
 
@@ -201,7 +201,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           목차
@@ -213,6 +213,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text">개요</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -285,47 +286,121 @@
 </noscript>
 
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
       
-  
-  
 
       
 
-    
-    
-    
-    <div class="post-block" lang="ko">
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://yundev.ga/binary-exponentiation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="YunGoon">
+      <meta itemprop="description" content="Thinking and Coding">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YunDev">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          빠른 거듭제곱
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">
-</h1>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
 
-<div class="post-meta-container">
+      <time title="Post created: 2020-10-01 16:45:36" itemprop="dateCreated datePublished" datetime="2020-10-01T16:45:36+09:00">2020-10-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">카테고리</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
+        </span>
+    </span>
+
   
-
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/binary-exponentiation/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="binary-exponentiation/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 </div>
 
-</header>
+        </div>
+      </header>
 
-      
-      
-      
-      <div class="post-body">
-          <center><p style="font-size:200px;">404</font></center>
-      </div>
-      
-      
-      
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h1><p>$$a^n$$</p>
+<p>$$\sum_{i=0}^{N} i^2 \eq \frac{N(N+1)(2N+1)}{6}$$</p>
+
     </div>
-    
 
     
     
     
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mathematics/" rel="tag"># mathematics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/pq-delete-element/" rel="prev" title="우선순위 큐에서 임의의 요소 삭제하기">
+                  <i class="fa fa-chevron-left"></i> 우선순위 큐에서 임의의 요소 삭제하기
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
       
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -445,6 +520,26 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://yundev.ga/binary-exponentiation/";
+    this.page.identifier = "binary-exponentiation/";
+    this.page.title = "빠른 거듭제곱";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://yundev.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
 </body>
