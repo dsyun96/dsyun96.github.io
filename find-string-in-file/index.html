@@ -24,12 +24,12 @@
     var CONFIG = {"hostname":"yundev.ga","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"검색할 키워드를 입력하세요","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits}개의 검색결과"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Linux1grep -r [문자열] [파일들]   현재 폴더에 있는 test 파일 내부에서 &quot;apple&quot; 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; .&#x2F;test  home 폴더부터 하위 모든 파일 내부에서 &quot;apple&quot; 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; ~&#x2F;*  home 폴더부">
+  <meta name="description" content="Linux 1grep -r [문자열] [파일들]   현재 폴더에 있는 test 파일 내부에서 “apple” 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; .&#x2F;test   home 폴더부터 하위 모든 파일 내부에서 “apple” 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; ~&#x2F;*   home 폴더부터 하위 모든 파일 중 .tx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="파일 속 문자열 검색">
 <meta property="og:url" content="https://yundev.ga/find-string-in-file/index.html">
 <meta property="og:site_name" content="YunDev">
-<meta property="og:description" content="Linux1grep -r [문자열] [파일들]   현재 폴더에 있는 test 파일 내부에서 &quot;apple&quot; 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; .&#x2F;test  home 폴더부터 하위 모든 파일 내부에서 &quot;apple&quot; 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; ~&#x2F;*  home 폴더부">
+<meta property="og:description" content="Linux 1grep -r [문자열] [파일들]   현재 폴더에 있는 test 파일 내부에서 “apple” 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; .&#x2F;test   home 폴더부터 하위 모든 파일 내부에서 “apple” 문자열 찾기 1grep -r &amp;#x27;apple&amp;#x27; ~&#x2F;*   home 폴더부터 하위 모든 파일 중 .tx">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2020-09-28T14:26:50.000Z">
 <meta property="article:modified_time" content="2020-09-30T05:24:41.036Z">
@@ -212,7 +212,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">1.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows"><span class="nav-number">2.</span> <span class="nav-text">Windows</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux"><span class="nav-number">1.</span> <span class="nav-text"> Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windows"><span class="nav-number">2.</span> <span class="nav-text"> Windows</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -358,28 +358,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r [문자열] [파일들]</span><br></pre></td></tr></table></figure>
-
+        <h1 id="linux"><a class="markdownIt-Anchor" href="#linux"></a> Linux</h1>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r [문자열] [파일들]</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>현재 폴더에 있는 test 파일 내부에서 &quot;apple&quot; 문자열 찾기</p>
+<li>
+<p>현재 폴더에 있는 test 파일 내부에서 “apple” 문자열 찾기</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">&#x27;apple&#x27;</span> ./<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>home 폴더부터 하위 모든 파일 내부에서 &quot;apple&quot; 문자열 찾기</p>
+<li>
+<p>home 폴더부터 하위 모든 파일 내부에서 “apple” 문자열 찾기</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">&#x27;apple&#x27;</span> ~/*</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>home 폴더부터 하위 모든 파일 중 .txt 파일 내부에서만 &quot;apple&quot; 문자열 찾기</p>
+<li>
+<p>home 폴더부터 하위 모든 파일 중 .txt 파일 내부에서만 “apple” 문자열 찾기</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">&#x27;apple&#x27;</span> ~/* --include *.txt</span><br></pre></td></tr></table></figure>
-
-
 </li>
 </ul>
-<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /M [문자열] *.*</span><br></pre></td></tr></table></figure>
-
+<h1 id="windows"><a class="markdownIt-Anchor" href="#windows"></a> Windows</h1>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /M [문자열] *.*</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>현재 폴더에 있는 모든 파일 내부에서 &quot;banana&quot; 문자열이 들어있는 파일명 찾기</p>
+<li>
+<p>현재 폴더에 있는 모든 파일 내부에서 “banana” 문자열이 들어있는 파일명 찾기</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /M &#x27;banana&#x27; *.*</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>현재 폴더와 하위 폴더에 있는 .txt 파일 내부에서 &quot;banana&quot; 문자열이 들어있는 파일명 찾기</p>
+<li>
+<p>현재 폴더와 하위 폴더에 있는 .txt 파일 내부에서 “banana” 문자열이 들어있는 파일명 찾기</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /S /M &#x27;banana&#x27; *.txt</span><br></pre></td></tr></table></figure></li>
 </ul>
 
