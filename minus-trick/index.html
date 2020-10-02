@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yundev.ga","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"검색할 키워드를 입력하세요","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits}개의 검색결과"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"yundev.ga","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"검색할 키워드를 입력하세요","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits}개의 검색결과"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
   <meta name="description" content="개요 C++에서 priority_queue를 이용해 값을 넣으면 기본적으로 가장 큰 값이 top으로 올라옵니다. 만약 가장 작은 값이 top으로 오게 하고 싶으면 functional 헤더의 greater를 사용하면 됩니다. 사용법은 다음과 같습니다. 12priority_queue&lt;int&gt; maxPQ;priority_queue&lt;int, ve">
@@ -32,7 +32,7 @@
 <meta property="og:description" content="개요 C++에서 priority_queue를 이용해 값을 넣으면 기본적으로 가장 큰 값이 top으로 올라옵니다. 만약 가장 작은 값이 top으로 오게 하고 싶으면 functional 헤더의 greater를 사용하면 됩니다. 사용법은 다음과 같습니다. 12priority_queue&lt;int&gt; maxPQ;priority_queue&lt;int, ve">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2020-09-29T05:29:13.000Z">
-<meta property="article:modified_time" content="2020-09-30T05:28:07.308Z">
+<meta property="article:modified_time" content="2020-10-02T06:20:48.990Z">
 <meta property="article:author" content="YunGoon">
 <meta property="article:tag" content="bit masking">
 <meta property="article:tag" content="trick">
@@ -230,7 +230,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -326,6 +326,13 @@
 
       <time title="Post created: 2020-09-29 14:29:13" itemprop="dateCreated datePublished" datetime="2020-09-29T14:29:13+09:00">2020-09-29</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">수정일</span>
+        <time title="Updated at: 2020-10-02 15:20:48" itemprop="dateModified" datetime="2020-10-02T15:20:48+09:00">2020-10-02</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -374,7 +381,7 @@
 꺼내서 쓸 때는 다시 마이너스를 붙여서 원래 부호로 만들어주면 됩니다.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; PQ;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i : &#123; <span class="number">-3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">-13</span>, <span class="number">6</span>, <span class="number">17</span> &#125;) PQ.push(-i);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (; !PQ.empty(); PQ.pop()) <span class="built_in">cout</span> &lt;&lt; -PQ.top() &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>위 코드를 실행한 출력은 다음과 같습니다.</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-13 -3 1 5 6 9 17 </span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><figcaption><span>출력</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-13 -3 1 5 6 9 17 </span><br></pre></td></tr></table></figure>
 <h1 id="한계"><a class="markdownIt-Anchor" href="#한계"></a> 한계</h1>
 <p>좋은 테크닉이지만, 마이너스를 쓰는 방법도 한계가 존재합니다.</p>
 <p>int의 범위는 4바이트일 경우 -2147483648부터 2147483647까지입니다. 만약 -2147483648을 우선순위 큐에 넣을 때 음수를 붙이는 순간 signed integer overflow가 발생합니다. 이는 <strong>Undefined Behavior</strong>에 해당하는 매우 위험한 코드가 되죠.</p>
@@ -384,7 +391,7 @@
 <p>따라서, 우리는 마이너스 대신 bitwise-not 연산자를 붙이면 깔끔하게 해결됩니다.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; PQ;</span><br><span class="line">  <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) vec.push_back(rand() % <span class="number">201</span> - <span class="number">100</span>);</span><br><span class="line">  vec.push_back(<span class="number">2147483647</span>);</span><br><span class="line">  vec.push_back(<span class="number">-2147483648</span>);</span><br><span class="line"></span><br><span class="line">  random_shuffle(vec.begin(), vec.end());</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i : vec) <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i : vec) PQ.push(~i);</span><br><span class="line">  <span class="keyword">for</span> (; !PQ.empty(); PQ.pop()) <span class="built_in">cout</span> &lt;&lt; ~PQ.top() &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>위 코드를 실행한 출력은 다음과 같습니다.</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">55 -3 -2147483648 84 -81 0 2147483647 -33 29 5 47 </span><br><span class="line">-2147483648 -81 -33 -3 0 5 29 47 55 84 2147483647 </span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><figcaption><span>출력</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">55 -3 -2147483648 84 -81 0 2147483647 -33 29 5 47 </span><br><span class="line">-2147483648 -81 -33 -3 0 5 29 47 55 84 2147483647 </span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -394,8 +401,8 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/bit-masking/" rel="tag"># bit masking</a>
-              <a href="/tags/trick/" rel="tag"># trick</a>
+              <a href="/tags/bit-masking/" rel="tag"><i class="fa fa-tag"></i> bit masking</a>
+              <a href="/tags/trick/" rel="tag"><i class="fa fa-tag"></i> trick</a>
           </div>
 
         

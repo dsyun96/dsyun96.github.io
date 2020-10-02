@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yundev.ga","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"검색할 키워드를 입력하세요","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits}개의 검색결과"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"yundev.ga","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"검색할 키워드를 입력하세요","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits}개의 검색결과"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
   <meta name="description" content="Thinking and Coding">
@@ -225,7 +225,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -294,6 +294,108 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://yundev.ga/gcd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="YunGoon">
+      <meta itemprop="description" content="Thinking and Coding">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YunDev">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/gcd/" class="post-title-link" itemprop="url">유클리드 호제법</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2020-10-02 16:53:53 / Updated at: 20:57:48" itemprop="dateCreated datePublished" datetime="2020-10-02T16:53:53+09:00">2020-10-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">카테고리</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/gcd/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="gcd/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="개요"><a class="markdownIt-Anchor" href="#개요"></a> 개요</h1>
+<p>음이 아닌 두 정수 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>가 있을 때, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>와 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>의 최대공약수를 구하려고 합니다.<br />
+단순하게 1부터 시작해서 a와 b를 나눈 나머지가 둘 다 0이 될 때까지 1씩 증가하며 찾는 방법을 생각해 볼 수 있겠지요.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> g = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (a % g || b % g) ++g;</span><br></pre></td></tr></table></figure>
+<p>하지만 위 코드는 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>min</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\min(a, b))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">min</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>으로 너무 느립니다.<br />
+최대공약수를 찾기 위해 10억 번을 돌게 되면 별로 유쾌하진 않을 거예요.<br />
+더 좋은 방법을 알아봅시다.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/gcd/#more" rel="contents">
+                더 읽어보기 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
     <link itemprop="mainEntityOfPage" href="https://yundev.ga/binary-exponentiation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -321,6 +423,13 @@
 
       <time title="Post created: 2020-10-01 16:45:36" itemprop="dateCreated datePublished" datetime="2020-10-01T16:45:36+09:00">2020-10-01</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">수정일</span>
+        <time title="Updated at: 2020-10-02 20:24:19" itemprop="dateModified" datetime="2020-10-02T20:24:19+09:00">2020-10-02</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -418,8 +527,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
+      
 
-      <time title="Post created: 2020-09-30 13:19:53" itemprop="dateCreated datePublished" datetime="2020-09-30T13:19:53+09:00">2020-09-30</time>
+      <time title="Post created: 2020-09-30 13:19:53 / Updated at: 14:28:14" itemprop="dateCreated datePublished" datetime="2020-09-30T13:19:53+09:00">2020-09-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -521,6 +631,13 @@
 
       <time title="Post created: 2020-09-29 14:29:13" itemprop="dateCreated datePublished" datetime="2020-09-29T14:29:13+09:00">2020-09-29</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">수정일</span>
+        <time title="Updated at: 2020-10-02 15:20:48" itemprop="dateModified" datetime="2020-10-02T15:20:48+09:00">2020-10-02</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -622,6 +739,13 @@
 
       <time title="Post created: 2020-09-28 23:26:50" itemprop="dateCreated datePublished" datetime="2020-09-28T23:26:50+09:00">2020-09-28</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">수정일</span>
+        <time title="Updated at: 2020-10-02 19:47:45" itemprop="dateModified" datetime="2020-10-02T19:47:45+09:00">2020-10-02</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -660,15 +784,15 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r [문자열] [파일들]</span><br></pre></td></tr></table></figure>
 <ul>
 <li>
-<p>현재 폴더에 있는 test 파일 내부에서 “apple” 문자열 찾기</p>
+<p>현재 폴더에 있는 test 파일 내부에서 "apple" 문자열 찾기</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">&#x27;apple&#x27;</span> ./<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p>home 폴더부터 하위 모든 파일 내부에서 “apple” 문자열 찾기</p>
+<p>home 폴더부터 하위 모든 파일 내부에서 "apple" 문자열 찾기</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">&#x27;apple&#x27;</span> ~/*</span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p>home 폴더부터 하위 모든 파일 중 .txt 파일 내부에서만 “apple” 문자열 찾기</p>
+<p>home 폴더부터 하위 모든 파일 중 .txt 파일 내부에서만 "apple" 문자열 찾기</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">&#x27;apple&#x27;</span> ~/* --include *.txt</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -676,11 +800,11 @@
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /M [문자열] *.*</span><br></pre></td></tr></table></figure>
 <ul>
 <li>
-<p>현재 폴더에 있는 모든 파일 내부에서 “banana” 문자열이 들어있는 파일명 찾기</p>
+<p>현재 폴더에 있는 모든 파일 내부에서 "banana" 문자열이 들어있는 파일명 찾기</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /M &#x27;banana&#x27; *.*</span><br></pre></td></tr></table></figure>
 </li>
 <li>
-<p>현재 폴더와 하위 폴더에 있는 .txt 파일 내부에서 “banana” 문자열이 들어있는 파일명 찾기</p>
+<p>현재 폴더와 하위 폴더에 있는 .txt 파일 내부에서 "banana" 문자열이 들어있는 파일명 찾기</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">FINDSTR</span> /S /M &#x27;banana&#x27; *.txt</span><br></pre></td></tr></table></figure></li>
 </ul>
 
