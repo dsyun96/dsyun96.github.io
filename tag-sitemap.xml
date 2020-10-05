@@ -3,14 +3,14 @@
 
 
     <url>
-        <loc>https://yundev.ga/tags/greedy/</loc>
+        <loc>https://yundev.ga/tags/priority-queue/</loc>
         <lastmod>2020-10-05T08:43:26.491Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://yundev.ga/tags/priority-queue/</loc>
+        <loc>https://yundev.ga/tags/greedy/</loc>
         <lastmod>2020-10-05T08:43:26.491Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
