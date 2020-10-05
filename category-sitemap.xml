@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/categories/algorithm/</loc>
+        <lastmod>2020-10-05T14:48:32.520Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://yundev.ga/categories/problem-solving/boj/gold/</loc>
         <lastmod>2020-10-05T08:43:26.491Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,13 +31,6 @@
     <url>
         <loc>https://yundev.ga/categories/problem-solving/</loc>
         <lastmod>2020-10-05T08:43:26.491Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/categories/algorithm/</loc>
-        <lastmod>2020-10-05T07:39:04.825Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

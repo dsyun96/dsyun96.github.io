@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/egcd/</loc>
+        <lastmod>2020-10-05T14:48:32.520Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/boj-19580/</loc>
         <lastmod>2020-10-05T08:43:26.491Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,14 +26,6 @@
     <url>
         <loc>https://yundev.ga/binary-exponentiation/</loc>
         <lastmod>2020-10-05T07:39:04.825Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/egcd/</loc>
-        <lastmod>2020-10-03T15:47:52.915Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
