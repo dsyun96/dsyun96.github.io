@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/fibonacci/</loc>
+        <lastmod>2020-10-06T08:25:31.905Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/binary-exponentiation/</loc>
+        <lastmod>2020-10-06T06:49:20.921Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/egcd/</loc>
         <lastmod>2020-10-05T14:48:32.520Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,14 +34,6 @@
     <url>
         <loc>https://yundev.ga/boj-19580/</loc>
         <lastmod>2020-10-05T08:43:26.491Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/binary-exponentiation/</loc>
-        <lastmod>2020-10-05T07:39:04.825Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
