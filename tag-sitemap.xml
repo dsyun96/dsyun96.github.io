@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>https://yundev.ga/tags/deque/</loc>
+        <lastmod>2020-10-07T11:34:48.431Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/tags/stack/</loc>
+        <lastmod>2020-10-07T11:25:03.690Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/tags/queue/</loc>
+        <lastmod>2020-10-07T11:24:37.956Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://yundev.ga/tags/mathematics/</loc>
         <lastmod>2020-10-06T08:25:31.905Z</lastmod>
         <changefreq>weekly</changefreq>
