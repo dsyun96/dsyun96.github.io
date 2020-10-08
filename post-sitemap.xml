@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/sieve-of-eratosthenes/</loc>
+        <lastmod>2020-10-08T14:36:37.244Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/deque/</loc>
         <lastmod>2020-10-07T11:34:48.431Z</lastmod>
         <changefreq>weekly</changefreq>
