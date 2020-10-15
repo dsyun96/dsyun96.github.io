@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/categories/tip/</loc>
+        <lastmod>2020-10-15T13:52:25.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://yundev.ga/categories/algorithm/</loc>
         <lastmod>2020-10-10T11:49:50.969Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -45,13 +52,6 @@
     <url>
         <loc>https://yundev.ga/categories/command/</loc>
         <lastmod>2020-10-02T10:47:45.342Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/categories/tip/</loc>
-        <lastmod>2020-10-02T06:20:48.990Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
