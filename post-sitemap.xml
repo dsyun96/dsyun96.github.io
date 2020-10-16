@@ -16,6 +16,22 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/minus-trick/</loc>
+        <lastmod>2020-10-15T14:07:38.984Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/pq-delete-element/</loc>
+        <lastmod>2020-10-15T14:07:37.012Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/sieve-of-eratosthenes/</loc>
         <lastmod>2020-10-10T11:49:50.969Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -90,22 +106,6 @@
     <url>
         <loc>https://yundev.ga/find-string-in-file/</loc>
         <lastmod>2020-10-02T10:47:45.342Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/minus-trick/</loc>
-        <lastmod>2020-10-02T06:20:48.990Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/pq-delete-element/</loc>
-        <lastmod>2020-09-30T05:28:14.572Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
