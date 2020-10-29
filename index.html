@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.2.0">
 <meta name="naver-site-verification" content="35d8ef617df15ff73b4d77d4b2a33716750d4266">
-<link rel="canonical" href="https://yundev.ga/about/">
+<link rel="canonical" href="https://yundev.ga/categories/">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -234,14 +234,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -306,6 +306,107 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://yundev.ga/xor-swap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="YunGoon">
+      <meta itemprop="description" content="Thinking and Coding">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YunDev">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/xor-swap/" class="post-title-link" itemprop="url">C/C++ 임시 변수 없이 swap하기</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+      
+
+      <time title="Post created: 2020-10-29 19:49:22 / Updated at: 21:52:02" itemprop="dateCreated datePublished" datetime="2020-10-29T19:49:22+09:00">2020-10-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">카테고리</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/tip/" itemprop="url" rel="index"><span itemprop="name">tip</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/xor-swap/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="xor-swap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="개요"><a class="markdownIt-Anchor" href="#개요"></a> 개요</h1>
+<p>두 변수의 값을 서로 맞바꾸는 상황을 생각해 봅시다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 임시 변수를 이용한 스왑</span></span><br><span class="line"><span class="keyword">int</span> tmp = a;</span><br><span class="line">a = b;</span><br><span class="line">b = tmp;</span><br></pre></td></tr></table></figure>
+<p>고전적인 방법으로는 임시 변수를 사용하는 방법이 있습니다.<br>
+근데 겨우 스왑하기 위해서 새로운 변수를 선언하는 것은 별로 탐탁지 않습니다.<br>
+임시 변수 없이 스왑할 수 있을까요?</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/xor-swap/#more" rel="contents">
+                더 읽어보기 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
     <link itemprop="mainEntityOfPage" href="https://yundev.ga/minus-index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -330,10 +431,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">작성일</span>
-      
 
-      <time title="Post created: 2020-10-15 17:56:37 / Updated at: 23:08:01" itemprop="dateCreated datePublished" datetime="2020-10-15T17:56:37+09:00">2020-10-15</time>
+      <time title="Post created: 2020-10-15 17:56:37" itemprop="dateCreated datePublished" datetime="2020-10-15T17:56:37+09:00">2020-10-15</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">수정일</span>
+        <time title="Updated at: 2020-10-29 20:02:48" itemprop="dateModified" datetime="2020-10-29T20:02:48+09:00">2020-10-29</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -715,112 +822,6 @@ s-65,47,-65,47z M834 80H400000v40H845z"/></svg></span></span></span><span class=
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/queue/#more" rel="contents">
-                더 읽어보기 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
-    <link itemprop="mainEntityOfPage" href="https://yundev.ga/stack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="YunGoon">
-      <meta itemprop="description" content="Thinking and Coding">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YunDev">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/stack/" class="post-title-link" itemprop="url">스택</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-      
-
-      <time title="Post created: 2020-10-07 16:24:49 / Updated at: 20:25:03" itemprop="dateCreated datePublished" datetime="2020-10-07T16:24:49+09:00">2020-10-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">카테고리</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/data-structure/" itemprop="url" rel="index"><span itemprop="name">data structure</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/stack/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="stack/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="개요"><a class="markdownIt-Anchor" href="#개요"></a> 개요</h1>
-<p>스택은 한 쪽에서만 데이터의 추가 및 삭제가 일어나는 구조입니다.<br>
-구조의 특성상 맨 마지막에 추가된 원소가 첫 번째로 삭제되기 때문에 LIFO(Last In First Out) 구조라고도 부릅니다.</p>
-<p><img src="../images/stack.png" alt></p>
-<p>스택은 크게 4가지의 연산을 제공합니다.</p>
-<ul>
-<li>top(): 스택에서 가장 위에 있는 데이터를 반환한다.</li>
-<li>push(x): 스택에 x를 추가한다.</li>
-<li>pop(): 스택에서 가장 위에 있는 데이터를 삭제한다.</li>
-<li>empty(): 스택이 비었다면 true, 그렇지 않으면 false를 반환한다.</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/stack/#more" rel="contents">
                 더 읽어보기 &raquo;
               </a>
             </div>

@@ -8,8 +8,24 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/xor-swap/</loc>
+        <lastmod>2020-10-29T12:52:02.655Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/minus-index/</loc>
-        <lastmod>2020-10-15T14:08:01.816Z</lastmod>
+        <lastmod>2020-10-29T11:02:48.179Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/boj-19580/</loc>
+        <lastmod>2020-10-29T11:02:33.368Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -82,14 +98,6 @@
     <url>
         <loc>https://yundev.ga/egcd/</loc>
         <lastmod>2020-10-05T14:48:32.520Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/boj-19580/</loc>
-        <lastmod>2020-10-05T08:43:26.491Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
