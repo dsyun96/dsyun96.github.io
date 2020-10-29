@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/minus-trick/</loc>
+        <lastmod>2020-10-29T12:56:11.634Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/pq-delete-element/</loc>
+        <lastmod>2020-10-29T12:55:53.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/minus-index/</loc>
+        <lastmod>2020-10-29T12:55:47.990Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/xor-swap/</loc>
         <lastmod>2020-10-29T12:52:02.655Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -16,32 +40,8 @@
     </url>
 
     <url>
-        <loc>https://yundev.ga/minus-index/</loc>
-        <lastmod>2020-10-29T11:02:48.179Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://yundev.ga/boj-19580/</loc>
         <lastmod>2020-10-29T11:02:33.368Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/minus-trick/</loc>
-        <lastmod>2020-10-15T14:07:38.984Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/pq-delete-element/</loc>
-        <lastmod>2020-10-15T14:07:37.012Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

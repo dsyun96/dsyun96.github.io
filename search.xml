@@ -31,7 +31,7 @@
     
     
     <entry>
-      <title>배열에서 음수 인덱스 사용하기</title>
+      <title>C/C++ 배열에서 음수 인덱스 사용하기</title>
       <link href="minus-index/"/>
       <url>minus-index/</url>
       
@@ -283,7 +283,7 @@
     
     
     <entry>
-      <title>우선순위 큐에서 임의의 요소 삭제하기</title>
+      <title>C++ 우선순위 큐에서 임의의 요소 삭제하기</title>
       <link href="pq-delete-element/"/>
       <url>pq-delete-element/</url>
       
@@ -310,7 +310,7 @@
     
     
     <entry>
-      <title>마이너스로 비교기준 바꾸기</title>
+      <title>C++ 마이너스로 비교기준 바꾸기</title>
       <link href="minus-trick/"/>
       <url>minus-trick/</url>
       

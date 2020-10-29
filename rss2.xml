@@ -43,7 +43,7 @@
     </item>
     
     <item>
-      <title>배열에서 음수 인덱스 사용하기</title>
+      <title>C/C++ 배열에서 음수 인덱스 사용하기</title>
       <link>https://yundev.ga/minus-index/</link>
       <guid>https://yundev.ga/minus-index/</guid>
       <pubDate>Thu, 15 Oct 2020 08:56:37 GMT</pubDate>
@@ -376,7 +376,7 @@ s-65,47,-65,47z M834 80H400000v40H845z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/sp
     </item>
     
     <item>
-      <title>우선순위 큐에서 임의의 요소 삭제하기</title>
+      <title>C++ 우선순위 큐에서 임의의 요소 삭제하기</title>
       <link>https://yundev.ga/pq-delete-element/</link>
       <guid>https://yundev.ga/pq-delete-element/</guid>
       <pubDate>Wed, 30 Sep 2020 04:19:53 GMT</pubDate>
@@ -406,7 +406,7 @@ s-65,47,-65,47z M834 80H400000v40H845z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/sp
     </item>
     
     <item>
-      <title>마이너스로 비교기준 바꾸기</title>
+      <title>C++ 마이너스로 비교기준 바꾸기</title>
       <link>https://yundev.ga/minus-trick/</link>
       <guid>https://yundev.ga/minus-trick/</guid>
       <pubDate>Tue, 29 Sep 2020 05:29:13 GMT</pubDate>
