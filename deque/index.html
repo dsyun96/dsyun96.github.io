@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.2.0">
 <meta name="naver-site-verification" content="35d8ef617df15ff73b4d77d4b2a33716750d4266">
-<link rel="canonical" href="https://yundev.ga/404.html">
+<link rel="canonical" href="https://yundev.ga/categories/">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -35,7 +35,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://yundev.ga/images/deque.png">
 <meta property="article:published_time" content="2020-10-07T09:10:42.000Z">
-<meta property="article:modified_time" content="2020-10-30T06:52:34.859Z">
+<meta property="article:modified_time" content="2020-10-30T13:29:13.554Z">
 <meta property="article:author" content="YunGoon">
 <meta property="article:tag" content="deque">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text"> 개요</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8-%EA%B5%AC%ED%98%84"><span class="nav-number">2.</span> <span class="nav-text"> 구체적인 구현</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#front"><span class="nav-number">2.1.</span> <span class="nav-text"> front()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#back"><span class="nav-number">2.2.</span> <span class="nav-text"> back()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push_frontx"><span class="nav-number">2.3.</span> <span class="nav-text"> push_front(x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push_backx"><span class="nav-number">2.4.</span> <span class="nav-text"> push_back(x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pop_front"><span class="nav-number">2.5.</span> <span class="nav-text"> pop_front()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pop_back"><span class="nav-number">2.6.</span> <span class="nav-text"> pop_back()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#empty"><span class="nav-number">2.7.</span> <span class="nav-text"> empty()</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text"> 개요</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8-%EA%B5%AC%ED%98%84"><span class="nav-number">2.</span> <span class="nav-text"> 구체적인 구현</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -344,7 +344,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">수정일</span>
-        <time title="Updated at: 2020-10-30 15:52:34" itemprop="dateModified" datetime="2020-10-30T15:52:34+09:00">2020-10-30</time>
+        <time title="Updated at: 2020-10-30 22:29:13" itemprop="dateModified" datetime="2020-10-30T22:29:13+09:00">2020-10-30</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -395,22 +395,9 @@
 </ul>
 <a id="more"></a>
 <h1 id="구체적인-구현"><a class="markdownIt-Anchor" href="#구체적인-구현"></a> 구체적인 구현</h1>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX = <span class="number">10000</span>;</span><br><span class="line"><span class="keyword">int</span> DQ[MAX], f = <span class="number">0</span>, b = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">size_t</span> N=<span class="number">10000</span>&gt;</span><br><span class="line">struct Deque &#123;</span><br><span class="line">	T DQ[N + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">int</span> f, b;</span><br><span class="line"></span><br><span class="line">	Deque() : f(<span class="number">0</span>), b(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">	<span class="function">T <span class="title">front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> DQ[f];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T <span class="title">back</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> DQ[(b + N) % (N + <span class="number">1</span>)];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">push_front</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (--f == <span class="number">-1</span>) f = N;</span><br><span class="line">		DQ[f] = x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">push_back</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">		DQ[b++] = x;</span><br><span class="line">		<span class="keyword">if</span> (b == N + <span class="number">1</span>) b = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T <span class="title">pop_front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (++f == N + <span class="number">1</span>) f = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">T <span class="title">pop_back</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (--b == <span class="number">-1</span>) b = N;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> f == b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (b - f + N + <span class="number">1</span>) % (N + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>덱도 큐와 마찬가지로 환형으로 구현합시다.</p>
-<h2 id="front"><a class="markdownIt-Anchor" href="#front"></a> front()</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DQ[f];</span><br></pre></td></tr></table></figure>
-<h2 id="back"><a class="markdownIt-Anchor" href="#back"></a> back()</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DQ[(b + MAX - <span class="number">1</span>) % MAX];</span><br></pre></td></tr></table></figure>
-<h2 id="push_frontx"><a class="markdownIt-Anchor" href="#push_frontx"></a> push_front(x)</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (--f == <span class="number">-1</span>) f = MAX - <span class="number">1</span>;</span><br><span class="line">DQ[f] = x;</span><br></pre></td></tr></table></figure>
-<h2 id="push_backx"><a class="markdownIt-Anchor" href="#push_backx"></a> push_back(x)</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DQ[b++] = x;</span><br><span class="line"><span class="keyword">if</span> (b == MAX) b = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="pop_front"><a class="markdownIt-Anchor" href="#pop_front"></a> pop_front()</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (++f == MAX) f = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="pop_back"><a class="markdownIt-Anchor" href="#pop_back"></a> pop_back()</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (--b == <span class="number">-1</span>) b = MAX - <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="empty"><a class="markdownIt-Anchor" href="#empty"></a> empty()</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f == b;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
