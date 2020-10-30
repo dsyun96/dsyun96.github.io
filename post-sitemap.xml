@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/binary-heap/</loc>
+        <lastmod>2020-10-30T15:43:25.272Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/queue/</loc>
-        <lastmod>2020-10-30T13:40:43.495Z</lastmod>
+        <lastmod>2020-10-30T14:53:28.223Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +25,7 @@
 
     <url>
         <loc>https://yundev.ga/stack/</loc>
-        <lastmod>2020-10-30T13:40:30.428Z</lastmod>
+        <lastmod>2020-10-30T14:53:24.367Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +33,7 @@
 
     <url>
         <loc>https://yundev.ga/deque/</loc>
-        <lastmod>2020-10-30T13:40:16.461Z</lastmod>
+        <lastmod>2020-10-30T14:53:20.340Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

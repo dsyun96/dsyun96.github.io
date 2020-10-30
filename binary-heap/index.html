@@ -26,23 +26,24 @@
     var CONFIG = {"hostname":"yundev.ga","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"검색할 키워드를 입력하세요","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits}개의 검색결과"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="개요 우선순위 큐는 보통 힙 자료구조를 사용해 구현됩니다. 힙은 최댓값 및 최솟값을 빠르게 찾아내기 위한 완전이진트리 기반의 자료구조입니다. 힙에서는 최댓값 및 최솟값이 top에 위치하게 되며, 이를 참조하는 데에는 상수시간이 걸립니다. 하지만 top을 제외한 나머지 요소들은 인터페이스 상 참조할 방법이 없습니다. 이때 필요에 의해서 힙에 들어있는 어떤">
+  <meta name="description" content="개요 힙은 최댓값 또는 최솟값을 빠르게 찾아내기 위해 고안된 자료구조입니다. 그 중에서 이진 힙은 우선순위 큐를 구현하는 데 자주 쓰입니다.  이진 힙은 크게 3가지 연산을 제공합니다.  top(): 최댓값을 반환한다. push(x): x를 삽입한다. pop(): 최댓값을 삭제한다(최대 힙의 경우).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ 우선순위 큐에서 임의의 요소 삭제하기">
-<meta property="og:url" content="https://yundev.ga/pq-delete-element/index.html">
+<meta property="og:title" content="이진 힙">
+<meta property="og:url" content="https://yundev.ga/binary-heap/index.html">
 <meta property="og:site_name" content="YunDev">
-<meta property="og:description" content="개요 우선순위 큐는 보통 힙 자료구조를 사용해 구현됩니다. 힙은 최댓값 및 최솟값을 빠르게 찾아내기 위한 완전이진트리 기반의 자료구조입니다. 힙에서는 최댓값 및 최솟값이 top에 위치하게 되며, 이를 참조하는 데에는 상수시간이 걸립니다. 하지만 top을 제외한 나머지 요소들은 인터페이스 상 참조할 방법이 없습니다. 이때 필요에 의해서 힙에 들어있는 어떤">
+<meta property="og:description" content="개요 힙은 최댓값 또는 최솟값을 빠르게 찾아내기 위해 고안된 자료구조입니다. 그 중에서 이진 힙은 우선순위 큐를 구현하는 데 자주 쓰입니다.  이진 힙은 크게 3가지 연산을 제공합니다.  top(): 최댓값을 반환한다. push(x): x를 삽입한다. pop(): 최댓값을 삭제한다(최대 힙의 경우).">
 <meta property="og:locale" content="ko_KR">
-<meta property="article:published_time" content="2020-09-30T04:19:53.000Z">
-<meta property="article:modified_time" content="2020-10-29T12:55:53.779Z">
+<meta property="og:image" content="https://yundev.ga/images/binary_heap.png">
+<meta property="article:published_time" content="2020-10-30T13:46:44.000Z">
+<meta property="article:modified_time" content="2020-10-30T15:43:25.272Z">
 <meta property="article:author" content="YunGoon">
-<meta property="article:tag" content="priority queue">
-<meta property="article:tag" content="trick">
+<meta property="article:tag" content="heap">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yundev.ga/images/binary_heap.png">
 <meta property="og:image" content="/images/bg.png">
 
 
-<link rel="canonical" href="https://yundev.ga/pq-delete-element/">
+<link rel="canonical" href="https://yundev.ga/binary-heap/">
 
 
 <script class="page-configurations">
@@ -55,7 +56,7 @@
   };
 </script>
 
-  <title>C++ 우선순위 큐에서 임의의 요소 삭제하기 | YunDev</title>
+  <title>이진 힙 | YunDev</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179631167-1"></script>
     <script>
@@ -224,7 +225,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text"> 개요</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%9A%94%EC%86%8C%EB%A5%BC-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-%EB%85%B8%EB%A0%A5"><span class="nav-number">2.</span> <span class="nav-text"> 요소를 삭제하기 위한 노력</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B0%A9%EB%AC%B8-%EB%B0%B0%EC%97%B4-%EB%A7%8C%EB%93%A4%EA%B8%B0"><span class="nav-number">2.1.</span> <span class="nav-text"> 방문 배열 만들기</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EB%B0%A9%EB%AC%B8-%EB%B0%B0%EC%97%B4-%EB%8C%80%EC%8B%A0-%EC%B9%B4%EC%9A%B4%ED%8C%85-%EB%B0%B0%EC%97%B4"><span class="nav-number">2.2.</span> <span class="nav-text"> 방문 배열 대신 카운팅 배열</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B9%B4%EC%9A%B4%ED%8C%85-%ED%95%B4%EC%89%AC-%ED%85%8C%EC%9D%B4%EB%B8%94"><span class="nav-number">2.3.</span> <span class="nav-text"> 카운팅 해쉬 테이블</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%83%88%EB%A1%9C%EC%9A%B4-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90"><span class="nav-number">2.4.</span> <span class="nav-text"> 새로운 우선순위 큐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%ED%95%9C-%EA%B1%B8%EC%9D%8C-%EB%8D%94"><span class="nav-number">2.5.</span> <span class="nav-text"> 한 걸음 더!</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text"> 개요</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8-%EA%B5%AC%ED%98%84"><span class="nav-number">2.</span> <span class="nav-text"> 구체적인 구현</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84"><span class="nav-number">3.</span> <span class="nav-text"> 시간복잡도</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#top"><span class="nav-number">3.1.</span> <span class="nav-text"> top()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pushx"><span class="nav-number">3.2.</span> <span class="nav-text"> push(x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pop"><span class="nav-number">3.3.</span> <span class="nav-text"> pop()</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -312,7 +313,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
-    <link itemprop="mainEntityOfPage" href="https://yundev.ga/pq-delete-element/">
+    <link itemprop="mainEntityOfPage" href="https://yundev.ga/binary-heap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -325,7 +326,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++ 우선순위 큐에서 임의의 요소 삭제하기
+          이진 힙
         </h1>
 
         <div class="post-meta-container">
@@ -336,14 +337,14 @@
       </span>
       <span class="post-meta-item-text">작성일</span>
 
-      <time title="Post created: 2020-09-30 13:19:53" itemprop="dateCreated datePublished" datetime="2020-09-30T13:19:53+09:00">2020-09-30</time>
+      <time title="Post created: 2020-10-30 22:46:44" itemprop="dateCreated datePublished" datetime="2020-10-30T22:46:44+09:00">2020-10-30</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">수정일</span>
-        <time title="Updated at: 2020-10-29 21:55:53" itemprop="dateModified" datetime="2020-10-29T21:55:53+09:00">2020-10-29</time>
+        <time title="Updated at: 2020-10-31 00:43:25" itemprop="dateModified" datetime="2020-10-31T00:43:25+09:00">2020-10-31</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -351,7 +352,7 @@
       </span>
       <span class="post-meta-item-text">카테고리</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/tip/" itemprop="url" rel="index"><span itemprop="name">tip</span></a>
+          <a href="/categories/data-structure/" itemprop="url" rel="index"><span itemprop="name">data structure</span></a>
         </span>
     </span>
 
@@ -364,8 +365,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/pq-delete-element/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="pq-delete-element/" itemprop="commentCount"></span>
+    <a title="disqus" href="/binary-heap/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="binary-heap/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -380,40 +381,30 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="개요"><a class="markdownIt-Anchor" href="#개요"></a> 개요</h1>
-<p>우선순위 큐는 보통 힙 자료구조를 사용해 구현됩니다.<br>
-힙은 최댓값 및 최솟값을 빠르게 찾아내기 위한 완전이진트리 기반의 자료구조입니다.</p>
-<p>힙에서는 최댓값 및 최솟값이 top에 위치하게 되며, 이를 참조하는 데에는 상수시간이 걸립니다.<br>
-하지만 top을 제외한 나머지 요소들은 인터페이스 상 참조할 방법이 없습니다.<br>
-이때 필요에 의해서 힙에 들어있는 어떤 임의의 요소를 삭제할 상황이 생기면 어떻게 해야할까요?</p>
+<p>힙은 최댓값 또는 최솟값을 빠르게 찾아내기 위해 고안된 자료구조입니다.<br>
+그 중에서 이진 힙은 우선순위 큐를 구현하는 데 자주 쓰입니다.</p>
+<p><img src="/images/binary_heap.png" alt></p>
+<p>이진 힙은 크게 3가지 연산을 제공합니다.</p>
+<ul>
+<li>top(): 최댓값을 반환한다.</li>
+<li>push(x): x를 삽입한다.</li>
+<li>pop(): 최댓값을 삭제한다(최대 힙의 경우).</li>
+</ul>
 <a id="more"></a>
-<h1 id="요소를-삭제하기-위한-노력"><a class="markdownIt-Anchor" href="#요소를-삭제하기-위한-노력"></a> 요소를 삭제하기 위한 노력</h1>
-<h2 id="방문-배열-만들기"><a class="markdownIt-Anchor" href="#방문-배열-만들기"></a> 방문 배열 만들기</h2>
-<p>우선순위 큐에 요소를 삭제하고 싶으면 방문 배열에 체크를 하는 방법이 있습니다.<br>
-다음과 같이 말이죠.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; PQ;</span><br><span class="line"><span class="keyword">bool</span> visit[<span class="number">100</span>]&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 7을 삭제</span></span><br><span class="line">visit[<span class="number">7</span>] = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 실질적인 삭제 처리 작업</span></span><br><span class="line"><span class="keyword">if</span> (!PQ.empty() &amp;&amp; visit[PQ.top()]) &#123;</span><br><span class="line">    PQ.pop();</span><br><span class="line">    visit[PQ.top()] = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>흠. 나쁘진 않네요. 하지만 이렇게 하면 중복된 요소를 처리할 수 없습니다.<br>
-우선순위 큐에 7이 2개 들어있고 둘 다 삭제해야 한다면 써먹을 수 없죠.</p>
-<h2 id="방문-배열-대신-카운팅-배열"><a class="markdownIt-Anchor" href="#방문-배열-대신-카운팅-배열"></a> 방문 배열 대신 카운팅 배열</h2>
-<p>그 문제는 이렇게 해결이 가능합니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; PQ;</span><br><span class="line"><span class="keyword">int</span> cnt[<span class="number">100</span>]&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 7을 2개 삭제</span></span><br><span class="line">cnt[<span class="number">7</span>] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 실질적인 삭제 처리 작업</span></span><br><span class="line"><span class="keyword">while</span> (!PQ.empty() &amp;&amp; cnt[PQ.top()]) &#123;</span><br><span class="line">    PQ.pop();</span><br><span class="line">    cnt[PQ.top()]--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>true/false가 아닌 그 개수를 카운팅하는 것이죠. 1번에서 언급한 한계는 해결됐네요.<br>
-하지만 아직 치명적인 문제점이 있습니다.<br>
-우선순위 큐에 들어올 요소의 범위가 int로 표현되는 모든 범위라면 어떻게 할까요?</p>
-<h2 id="카운팅-해쉬-테이블"><a class="markdownIt-Anchor" href="#카운팅-해쉬-테이블"></a> 카운팅 해쉬 테이블</h2>
-<p>unordered_map을 사용하면 그 부분도 해결이 됩니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; PQ;</span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; cnt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2147483647을 삭제</span></span><br><span class="line">cnt[<span class="number">2147483647</span>]++;</span><br></pre></td></tr></table></figure>
-<p>이제 int 범위 어떤 범위가 들어오더라도 삭제 처리를 할 수 있게 되었습니다.<br>
-하지만 unordered_map은 해쉬충돌이 자주 일어나면 상당히 느리게 동작한다는 단점이 있습니다.<br>
-혹시 더 좋은 방법도 있을까요?</p>
-<h2 id="새로운-우선순위-큐"><a class="markdownIt-Anchor" href="#새로운-우선순위-큐"></a> 새로운 우선순위 큐</h2>
-<p>삭제를 담당할 우선순위 큐를 사용하는 방법이 있습니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="keyword">int</span>&gt; PQ, delPQ;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2147483647을 삭제</span></span><br><span class="line">delPQ.push(<span class="number">2147483647</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 실질적인 삭제 처리 작업</span></span><br><span class="line"><span class="keyword">while</span> (!PQ.empty() &amp;&amp; !delPQ.empty() &amp;&amp; PQ.top() == delPQ.top()) &#123;</span><br><span class="line">    PQ.pop();</span><br><span class="line">    delPQ.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>delPQ.top()이 PQ.top()보다 작으면 현재 PQ.top()은 삭제되지 않은 요소이므로 무시하면 되고, 같다면 삭제해야 하는 요소이므로 삭제해주면 됩니다.</p>
-<h2 id="한-걸음-더"><a class="markdownIt-Anchor" href="#한-걸음-더"></a> 한 걸음 더!</h2>
-<p>PQ에 들어있지 않은데 실수로, 혹은 상황에 의해 어쩔 수 없이 존재하지도 않은 요소를 삭제하게 되어 delPQ에 넣었다면 그건 어떻게 처리해야 할까요?</p>
-<p>다음과 같이 바꿔주면 됩니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 실질적인 삭제 처리 작업</span></span><br><span class="line"><span class="keyword">while</span> (!PQ.empty() &amp;&amp; !delPQ.empty() &amp;&amp; PQ.top() &lt;= delPQ.top()) &#123;</span><br><span class="line">    <span class="keyword">if</span> (PQ.top() == delPQ.top()) PQ.pop();</span><br><span class="line">    delPQ.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>만약 delPQ.top()이 PQ.top()보다 크다면 그것은 잘못 들어간 요소일 테니 그냥 지워주면 됩니다. PQ.top()보다 작다면 딱히 신경쓰지 않아도 되므로 무시하면 됩니다.</p>
+<h1 id="구체적인-구현"><a class="markdownIt-Anchor" href="#구체적인-구현"></a> 구체적인 구현</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;</span><br><span class="line">    <span class="keyword">typename</span> T,</span><br><span class="line">    <span class="keyword">size_t</span> N = <span class="number">10000</span>,</span><br><span class="line">    class Compare = less&lt;T&gt;</span><br><span class="line">&gt;</span><br><span class="line">struct BinaryHeap &#123;</span><br><span class="line">    T H[N + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> p;</span><br><span class="line">    Compare comp;</span><br><span class="line"></span><br><span class="line">    BinaryHeap() : p(<span class="number">1</span>), comp(Compare()) &#123;&#125;</span><br><span class="line">    <span class="function">T <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> H[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">        H[p] = x;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = p; i &gt; <span class="number">1</span>; i &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (comp(H[i], H[i &gt;&gt; <span class="number">1</span>])) <span class="keyword">break</span>;</span><br><span class="line">            swap(H[i], H[i &gt;&gt; <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        ++p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        H[<span class="number">1</span>] = H[--p];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;&lt; <span class="number">1</span> &lt; p; ) &#123;</span><br><span class="line">            <span class="keyword">int</span> child = i &lt;&lt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (child + <span class="number">1</span> &lt; p &amp;&amp; comp(H[child], H[child + <span class="number">1</span>])) ++child;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (comp(H[child], H[i])) <span class="keyword">break</span>;</span><br><span class="line">            swap(H[child], H[i]);</span><br><span class="line">            i = child;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> p == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> p - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Compare는 기본적으로 less이며, 이 경우 최대 힙이 됩니다.<br>
+최소 힙으로 바꾸고 싶다면 다음과 같이 선언해야 합니다.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BinaryHeap&lt;<span class="keyword">int</span>, <span class="number">10000</span>, greater&lt;<span class="keyword">int</span>&gt;&gt; binary_heap;</span><br></pre></td></tr></table></figure>
+<h1 id="시간복잡도"><a class="markdownIt-Anchor" href="#시간복잡도"></a> 시간복잡도</h1>
+<h2 id="top"><a class="markdownIt-Anchor" href="#top"></a> top()</h2>
+<p>1번 인덱스에 있는 원소를 바로 반환하면 되므로 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>입니다.</p>
+<h2 id="pushx"><a class="markdownIt-Anchor" href="#pushx"></a> push(x)</h2>
+<p>완전이진트리의 맨 아래에 원소를 추가했을 때, 운이 좋다면 바로 끝나서 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>이 될 수 있습니다.<br>
+하지만 부모와의 비교를 통해 루트 노드까지 올라올 경우, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>이 됩니다.</p>
+<h2 id="pop"><a class="markdownIt-Anchor" href="#pop"></a> pop()</h2>
+<p>push와 마찬가지로, 마지막 원소를 루트 자리로 이동시켰을 때 그걸로 완성이라면 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>입니다.<br>
+그러나 자식과의 비교를 통해 맨 밑으로 내려갈 경우, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>이 됩니다.</p>
 
     </div>
 
@@ -423,22 +414,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/priority-queue/" rel="tag"><i class="fa fa-tag"></i> priority queue</a>
-              <a href="/tags/trick/" rel="tag"><i class="fa fa-tag"></i> trick</a>
+              <a href="/tags/heap/" rel="tag"><i class="fa fa-tag"></i> heap</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/minus-trick/" rel="prev" title="C++ 마이너스로 비교기준 바꾸기">
-                  <i class="fa fa-chevron-left"></i> C++ 마이너스로 비교기준 바꾸기
+                <a href="/xor-swap/" rel="prev" title="C/C++ 임시 변수 없이 swap하기">
+                  <i class="fa fa-chevron-left"></i> C/C++ 임시 변수 없이 swap하기
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/binary-exponentiation/" rel="next" title="빠른 거듭제곱">
-                  빠른 거듭제곱 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -580,9 +567,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://yundev.ga/pq-delete-element/";
-    this.page.identifier = "pq-delete-element/";
-    this.page.title = "C++ 우선순위 큐에서 임의의 요소 삭제하기";
+    this.page.url = "https://yundev.ga/binary-heap/";
+    this.page.identifier = "binary-heap/";
+    this.page.title = "이진 힙";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {
