@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/primality-test/</loc>
+        <lastmod>2020-10-31T15:51:20.041Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/binary-exponentiation/</loc>
+        <lastmod>2020-10-31T13:58:44.975Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/sieve-of-eratosthenes/</loc>
+        <lastmod>2020-10-31T13:47:02.329Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/binary-heap/</loc>
         <lastmod>2020-10-30T15:43:25.272Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -80,24 +104,8 @@
     </url>
 
     <url>
-        <loc>https://yundev.ga/sieve-of-eratosthenes/</loc>
-        <lastmod>2020-10-10T11:49:50.969Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://yundev.ga/fibonacci/</loc>
         <lastmod>2020-10-06T08:25:31.905Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/binary-exponentiation/</loc>
-        <lastmod>2020-10-06T06:49:20.921Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

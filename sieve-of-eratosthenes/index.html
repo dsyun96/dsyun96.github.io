@@ -26,15 +26,15 @@
     var CONFIG = {"hostname":"yundev.ga","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"검색할 키워드를 입력하세요","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits}개의 검색결과"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="개요 nnn 이하의 모든 소수를 찾으려고 합니다. 1부터 nnn까지 순회하면서 각 수에 대해 간단히 소수판별을 하는 방법을 생각해 볼 수 있습니다. 123vector&lt;int&gt; primes;for (int i &#x3D; 2; i &lt;&#x3D; n; ++i)    if (isPrime(i)) primes.push_back(i); isPrime(x) 함수는 2">
+  <meta name="description" content="개요 nnn 이하의 모든 소수를 찾으려고 합니다. 1부터 nnn까지 순회하면서 각 수에 대해 간단히 소수판별을 하는 방법을 생각해 볼 수 있습니다. 123vector&lt;int&gt; primes;for (int i &#x3D; 2; i &lt;&#x3D; n; ++i)    if (is_prime(i)) primes.push_back(i); isPrime(x) 함수는">
 <meta property="og:type" content="article">
 <meta property="og:title" content="에라토스테네스의 체">
 <meta property="og:url" content="https://yundev.ga/sieve-of-eratosthenes/index.html">
 <meta property="og:site_name" content="YunDev">
-<meta property="og:description" content="개요 nnn 이하의 모든 소수를 찾으려고 합니다. 1부터 nnn까지 순회하면서 각 수에 대해 간단히 소수판별을 하는 방법을 생각해 볼 수 있습니다. 123vector&lt;int&gt; primes;for (int i &#x3D; 2; i &lt;&#x3D; n; ++i)    if (isPrime(i)) primes.push_back(i); isPrime(x) 함수는 2">
+<meta property="og:description" content="개요 nnn 이하의 모든 소수를 찾으려고 합니다. 1부터 nnn까지 순회하면서 각 수에 대해 간단히 소수판별을 하는 방법을 생각해 볼 수 있습니다. 123vector&lt;int&gt; primes;for (int i &#x3D; 2; i &lt;&#x3D; n; ++i)    if (is_prime(i)) primes.push_back(i); isPrime(x) 함수는">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:published_time" content="2020-10-08T08:03:45.000Z">
-<meta property="article:modified_time" content="2020-10-10T11:49:50.969Z">
+<meta property="article:modified_time" content="2020-10-31T13:47:02.329Z">
 <meta property="article:author" content="YunGoon">
 <meta property="article:tag" content="mathematics">
 <meta property="article:tag" content="prime number">
@@ -239,7 +239,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
@@ -266,9 +266,6 @@
       </span>
       <span class="links-of-author-item">
         <a href="https://blog.naver.com/dsyun96" title="NaverBlog → https:&#x2F;&#x2F;blog.naver.com&#x2F;dsyun96" rel="external nofollow noopener noreferrer" target="_blank"><i class="fas fa-bold fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.facebook.com/dsyun96" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;dsyun96" rel="external nofollow noopener noreferrer" target="_blank"><i class="fab fa-facebook-square fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
         <a href="https://yundev.ga/rss2.xml" title="Rss → https:&#x2F;&#x2F;yundev.ga&#x2F;rss2.xml"><i class="fas fa-rss fa-fw"></i></a>
@@ -343,7 +340,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">수정일</span>
-        <time title="Updated at: 2020-10-10 20:49:50" itemprop="dateModified" datetime="2020-10-10T20:49:50+09:00">2020-10-10</time>
+        <time title="Updated at: 2020-10-31 22:47:02" itemprop="dateModified" datetime="2020-10-31T22:47:02+09:00">2020-10-31</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -382,7 +379,7 @@
         <h1 id="개요"><a class="markdownIt-Anchor" href="#개요"></a> 개요</h1>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 이하의 모든 소수를 찾으려고 합니다.<br>
 1부터 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>까지 순회하면서 각 수에 대해 간단히 소수판별을 하는 방법을 생각해 볼 수 있습니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; primes;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">    <span class="keyword">if</span> (isPrime(i)) primes.push_back(i);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; primes;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">    <span class="keyword">if</span> (is_prime(i)) primes.push_back(i);</span><br></pre></td></tr></table></figure>
 <p>isPrime(x) 함수는 2부터 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mi>x</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.23972em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">x</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width="400em" height="1.08em" viewbox="0 0 400000 1080" preserveaspectratio="xMinYMin slice"><path d="M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
 -10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
 -50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
