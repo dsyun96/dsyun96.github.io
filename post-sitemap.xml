@@ -8,112 +8,8 @@
     </url>
 
     <url>
-        <loc>https://yundev.ga/primality-test/</loc>
-        <lastmod>2020-10-31T16:00:12.813Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/binary-exponentiation/</loc>
-        <lastmod>2020-10-31T13:58:44.975Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/sieve-of-eratosthenes/</loc>
-        <lastmod>2020-10-31T13:47:02.329Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/binary-heap/</loc>
-        <lastmod>2020-10-30T15:43:25.272Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/queue/</loc>
-        <lastmod>2020-10-30T14:53:28.223Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/stack/</loc>
-        <lastmod>2020-10-30T14:53:24.367Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/deque/</loc>
-        <lastmod>2020-10-30T14:53:20.340Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/minus-trick/</loc>
-        <lastmod>2020-10-29T12:56:11.634Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/pq-delete-element/</loc>
-        <lastmod>2020-10-29T12:55:53.779Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/minus-index/</loc>
-        <lastmod>2020-10-29T12:55:47.990Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/xor-swap/</loc>
-        <lastmod>2020-10-29T12:52:02.655Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/boj-19580/</loc>
-        <lastmod>2020-10-29T11:02:33.368Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/fibonacci/</loc>
-        <lastmod>2020-10-06T08:25:31.905Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/egcd/</loc>
-        <lastmod>2020-10-05T14:48:32.520Z</lastmod>
+        <loc>https://yundev.ga/boj-3487/</loc>
+        <lastmod>2020-11-01T08:12:16.690Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -121,7 +17,119 @@
 
     <url>
         <loc>https://yundev.ga/gcd/</loc>
-        <lastmod>2020-10-03T15:46:01.196Z</lastmod>
+        <lastmod>2020-11-01T07:12:13.126Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/egcd/</loc>
+        <lastmod>2020-11-01T07:12:11.266Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/fibonacci/</loc>
+        <lastmod>2020-11-01T07:12:09.380Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/xor-swap/</loc>
+        <lastmod>2020-11-01T07:12:06.155Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/minus-index/</loc>
+        <lastmod>2020-11-01T07:12:03.931Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/pq-delete-element/</loc>
+        <lastmod>2020-11-01T07:12:00.458Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/minus-trick/</loc>
+        <lastmod>2020-11-01T07:11:58.827Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/deque/</loc>
+        <lastmod>2020-11-01T07:11:57.353Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/stack/</loc>
+        <lastmod>2020-11-01T07:11:55.779Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/queue/</loc>
+        <lastmod>2020-11-01T07:11:54.196Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/binary-heap/</loc>
+        <lastmod>2020-11-01T07:11:52.158Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/sieve-of-eratosthenes/</loc>
+        <lastmod>2020-11-01T07:11:49.465Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/binary-exponentiation/</loc>
+        <lastmod>2020-11-01T07:11:47.025Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/primality-test/</loc>
+        <lastmod>2020-11-01T07:11:40.985Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://yundev.ga/boj-19580/</loc>
+        <lastmod>2020-11-01T06:45:43.533Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
