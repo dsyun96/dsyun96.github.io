@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/char-trick/</loc>
+        <lastmod>2020-11-01T10:58:01.920Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/boj-3487/</loc>
         <lastmod>2020-11-01T08:12:16.690Z</lastmod>
         <changefreq>weekly</changefreq>
