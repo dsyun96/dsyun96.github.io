@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/pq-delete-element/</loc>
+        <lastmod>2020-11-01T14:16:56.402Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/char-trick/</loc>
         <lastmod>2020-11-01T11:58:31.691Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,14 +66,6 @@
     <url>
         <loc>https://yundev.ga/minus-index/</loc>
         <lastmod>2020-11-01T07:12:03.931Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://yundev.ga/pq-delete-element/</loc>
-        <lastmod>2020-11-01T07:12:00.458Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
