@@ -26,22 +26,24 @@
     var CONFIG = {"hostname":"yundev.ga","root":"/","scheme":"Pisces","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"검색할 키워드를 입력하세요","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits}개의 검색결과"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="개요 코딩하다 보면 문자와 관련해서 처리해야 할 다양한 상황이 많습니다. 예를 들면 다음과 같죠.   &#39;0&#39;부터 &#39;9&#39; 사이의 문자를 숫자로 바꾸기  어떤 문자 ch가 a, e, i, o, u 중 하나에 속하는지 확인하기 어떤 문자 ch를 대문자&#x2F;소문자로 바꾸기 기타 등등…  이 글에서는 몇 가지 기술들에 대해서 알아봅니다.">
+  <meta name="description" content="개요 세그먼트 트리는 특정 구간에 대한 처리를 빠르게 처리하기 위해 고안된 트리입니다. 임의의 구간에 대한 합, 곱, xor 뿐만 아니라 최대, 최소 등 여러가지를 빠르게 구할 수 있습니다. 또한 어떤 원소에 대한 업데이트 처리 역시 가능합니다.  세그먼트 트리는 크게 3가지 연산을 제공합니다.  build(): 세그먼트 트리를 구축한다(최초 한 번).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C&#x2F;C++ 문자 처리 기술">
-<meta property="og:url" content="https://yundev.ga/char-trick/index.html">
+<meta property="og:title" content="세그먼트 트리">
+<meta property="og:url" content="https://yundev.ga/segment-tree/index.html">
 <meta property="og:site_name" content="YunDev">
-<meta property="og:description" content="개요 코딩하다 보면 문자와 관련해서 처리해야 할 다양한 상황이 많습니다. 예를 들면 다음과 같죠.   &#39;0&#39;부터 &#39;9&#39; 사이의 문자를 숫자로 바꾸기  어떤 문자 ch가 a, e, i, o, u 중 하나에 속하는지 확인하기 어떤 문자 ch를 대문자&#x2F;소문자로 바꾸기 기타 등등…  이 글에서는 몇 가지 기술들에 대해서 알아봅니다.">
+<meta property="og:description" content="개요 세그먼트 트리는 특정 구간에 대한 처리를 빠르게 처리하기 위해 고안된 트리입니다. 임의의 구간에 대한 합, 곱, xor 뿐만 아니라 최대, 최소 등 여러가지를 빠르게 구할 수 있습니다. 또한 어떤 원소에 대한 업데이트 처리 역시 가능합니다.  세그먼트 트리는 크게 3가지 연산을 제공합니다.  build(): 세그먼트 트리를 구축한다(최초 한 번).">
 <meta property="og:locale" content="ko_KR">
-<meta property="article:published_time" content="2020-11-01T09:54:07.000Z">
-<meta property="article:modified_time" content="2020-11-01T11:58:31.691Z">
+<meta property="og:image" content="https://yundev.ga/images/segment_tree.png">
+<meta property="article:published_time" content="2020-11-04T01:51:26.000Z">
+<meta property="article:modified_time" content="2020-11-04T04:24:55.420Z">
 <meta property="article:author" content="YunGoon">
-<meta property="article:tag" content="bit masking">
+<meta property="article:tag" content="tree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yundev.ga/images/segment_tree.png">
 <meta property="og:image" content="/images/bg.png">
 
 
-<link rel="canonical" href="https://yundev.ga/char-trick/">
+<link rel="canonical" href="https://yundev.ga/segment-tree/">
 
 
 <script class="page-configurations">
@@ -54,7 +56,7 @@
   };
 </script>
 
-  <title>C/C++ 문자 처리 기술 | YunDev</title>
+  <title>세그먼트 트리 | YunDev</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179631167-1"></script>
     <script>
@@ -223,7 +225,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text"> 개요</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%AC%B8%EC%9E%90%EB%A5%BC-%EC%88%AB%EC%9E%90%EB%A1%9C-%EB%B3%80%ED%99%98"><span class="nav-number">2.</span> <span class="nav-text"> 문자를 숫자로 변환</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%AC%B8%EC%9E%90%EA%B0%80-%EB%AA%A8%EC%9D%8C%EC%9D%B8%EC%A7%80-%ED%99%95%EC%9D%B8"><span class="nav-number">3.</span> <span class="nav-text"> 문자가 모음인지 확인</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%AC%B8%EC%9E%90%EB%A5%BC-%EB%8C%80%EB%AC%B8%EC%9E%90%EC%86%8C%EB%AC%B8%EC%9E%90%EB%A1%9C-%EB%B3%80%ED%99%98"><span class="nav-number">4.</span> <span class="nav-text"> 문자를 대문자&#x2F;소문자로 변환</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%99%EC%9D%80-%EB%AC%B8%EC%9E%90-n%EA%B0%9C%EB%A5%BC-%EC%97%B0%EC%86%8D%ED%95%B4%EC%84%9C-%EC%B6%9C%EB%A0%A5"><span class="nav-number">5.</span> <span class="nav-text"> 같은 문자 n개를 연속해서 출력</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%B0%98%EB%B3%B5%EB%AC%B8%EC%97%90%EC%84%9C-%EC%B6%9C%EB%A0%A5-%EC%8B%9C-%EB%A7%88%EC%A7%80%EB%A7%89-%EA%B3%B5%EB%B0%B1-%EC%A0%9C%EA%B1%B0"><span class="nav-number">6.</span> <span class="nav-text"> 반복문에서 출력 시 마지막 공백 제거</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text"> 개요</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8-%EA%B5%AC%ED%98%84"><span class="nav-number">2.</span> <span class="nav-text"> 구체적인 구현</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84"><span class="nav-number">3.</span> <span class="nav-text"> 시간복잡도</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#build"><span class="nav-number">3.1.</span> <span class="nav-text"> build()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#updatex-val"><span class="nav-number">3.2.</span> <span class="nav-text"> update(x, val)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#queryl-r"><span class="nav-number">3.3.</span> <span class="nav-text"> query(l, r)</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -308,7 +310,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
-    <link itemprop="mainEntityOfPage" href="https://yundev.ga/char-trick/">
+    <link itemprop="mainEntityOfPage" href="https://yundev.ga/segment-tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -321,7 +323,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C/C++ 문자 처리 기술
+          세그먼트 트리
         </h1>
 
         <div class="post-meta-container">
@@ -333,7 +335,7 @@
       <span class="post-meta-item-text">작성일</span>
       
 
-      <time title="Post created: 2020-11-01 18:54:07 / Updated at: 20:58:31" itemprop="dateCreated datePublished" datetime="2020-11-01T18:54:07+09:00">2020-11-01</time>
+      <time title="Post created: 2020-11-04 10:51:26 / Updated at: 13:24:55" itemprop="dateCreated datePublished" datetime="2020-11-04T10:51:26+09:00">2020-11-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -341,7 +343,7 @@
       </span>
       <span class="post-meta-item-text">카테고리</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/tip/" itemprop="url" rel="index"><span itemprop="name">tip</span></a>
+          <a href="/categories/data-structure/" itemprop="url" rel="index"><span itemprop="name">data structure</span></a>
         </span>
     </span>
 
@@ -354,8 +356,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/char-trick/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="char-trick/" itemprop="commentCount"></span>
+    <a title="disqus" href="/segment-tree/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="segment-tree/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -370,40 +372,31 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="개요"><a class="markdownIt-Anchor" href="#개요"></a> 개요</h1>
-<p>코딩하다 보면 문자와 관련해서 처리해야 할 다양한 상황이 많습니다.<br>
-예를 들면 다음과 같죠.</p>
+<p>세그먼트 트리는 특정 구간에 대한 처리를 빠르게 처리하기 위해 고안된 트리입니다.<br>
+임의의 구간에 대한 합, 곱, xor 뿐만 아니라 최대, 최소 등 여러가지를 빠르게 구할 수 있습니다.<br>
+또한 어떤 원소에 대한 업데이트 처리 역시 가능합니다.</p>
+<p><img src="/images/segment_tree.png" alt></p>
+<p>세그먼트 트리는 크게 3가지 연산을 제공합니다.</p>
 <ul>
-<li>
-'0'부터 '9' 사이의 문자를 숫자로 바꾸기
-</li>
-<li>어떤 문자 ch가 a, e, i, o, u 중 하나에 속하는지 확인하기</li>
-<li>어떤 문자 ch를 대문자/소문자로 바꾸기</li>
-<li>기타 등등…</li>
+<li>build(): 세그먼트 트리를 구축한다(최초 한 번).</li>
+<li>update(x, val): x 위치의 원소를 val로 갱신한다.</li>
+<li>query(l, r): [l, r) 구간의 합을 반환한다(연산이 합일 경우).</li>
 </ul>
-<p>이 글에서는 몇 가지 기술들에 대해서 알아봅니다.</p>
 <a id="more"></a>
-<h1 id="문자를-숫자로-변환"><a class="markdownIt-Anchor" href="#문자를-숫자로-변환"></a> 문자를 숫자로 변환</h1>
-<p>문자 ch에서 오프셋인 '0'를 빼주면 됩니다.<br>
-또는 아스키코드에 해당하는 48을 사용해도 무방합니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">char_to_int</span><span class="params">(<span class="keyword">char</span> ch)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ch - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="문자가-모음인지-확인"><a class="markdownIt-Anchor" href="#문자가-모음인지-확인"></a> 문자가 모음인지 확인</h1>
-<p>상황을 단순하게 가정하기 위해서 모음(a, e, i, o, u)인지 확인한다고 합시다.<br>
-간단하게는 or 조건을 이용해서 확인하는 방법이 있습니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_vowel</span><span class="params">(<span class="keyword">char</span> ch)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ch == <span class="string">&#x27;a&#x27;</span> || ch == <span class="string">&#x27;e&#x27;</span> || ch == <span class="string">&#x27;i&#x27;</span> || ch == <span class="string">&#x27;o&#x27;</span> || ch == <span class="string">&#x27;u&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>5개만 비교해도 귀찮기 짝이 없습니다.<br>
-다음의 방법을 사용하면 훨씬 간단해집니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_vowel</span><span class="params">(<span class="keyword">char</span> ch)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">strchr</span>(<span class="string">&quot;aeiou&quot;</span>, ch);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="문자를-대문자소문자로-변환"><a class="markdownIt-Anchor" href="#문자를-대문자소문자로-변환"></a> 문자를 대문자/소문자로 변환</h1>
-<p>bit 연산을 이용하면 간단하게 해결됩니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> lower = ch | <span class="string">&#x27; &#x27;</span>;  <span class="comment">// 무조건 소문자로</span></span><br><span class="line"><span class="keyword">char</span> upper = ch &amp; <span class="string">&#x27;_&#x27;</span>;  <span class="comment">// 무조건 대문자로</span></span><br><span class="line"><span class="keyword">char</span> flip  = ch ^ <span class="string">&#x27; &#x27;</span>;  <span class="comment">// 대문자는 소문자로, 소문자는 대문자로</span></span><br></pre></td></tr></table></figure>
-<h1 id="같은-문자-n개를-연속해서-출력"><a class="markdownIt-Anchor" href="#같은-문자-n개를-연속해서-출력"></a> 같은 문자 n개를 연속해서 출력</h1>
-<p>C에서는 반복문을 사용하거나 배열과 memset 함수 사용(널문자 주의) 등으로 가능합니다.<br>
-C++에서는 std::string 생성자를 이용하면 됩니다.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">string</span>(<span class="number">50</span>, <span class="string">&#x27;=&#x27;</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="반복문에서-출력-시-마지막-공백-제거"><a class="markdownIt-Anchor" href="#반복문에서-출력-시-마지막-공백-제거"></a> 반복문에서 출력 시 마지막 공백 제거</h1>
-<p>첫번째 수를 반복문 바깥에서 먼저 출력 후 나머지를 반복으로 처리하는 방법도 있고, 반복문 안에서 if로 조건을 걸어 마지막에만 공백을 출력하지 않는 방법 등이 있습니다.<br>
-하지만 다음의 방법이 더 깔끔합니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d%c&quot;</span>, arr[i], <span class="string">&quot; \n&quot;</span>[i == N - <span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+<h1 id="구체적인-구현"><a class="markdownIt-Anchor" href="#구체적인-구현"></a> 구체적인 구현</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;</span><br><span class="line">    <span class="keyword">typename</span> T,</span><br><span class="line">    <span class="keyword">size_t</span> N = <span class="number">100000</span>,</span><br><span class="line">    class BinaryOperation = plus&lt;T&gt;</span><br><span class="line">&gt;</span><br><span class="line">struct SegmentTree &#123;</span><br><span class="line">    T c[<span class="number">2</span> * N];</span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    BinaryOperation op;</span><br><span class="line"></span><br><span class="line">    SegmentTree(<span class="keyword">int</span> size = N) : size(size), op(BinaryOperation()) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = size; --i; )</span><br><span class="line">            c[i] = op(c[i &lt;&lt; <span class="number">1</span>], c[i &lt;&lt; <span class="number">1</span> | <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> idx, T value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (c[idx += size] = value; idx &gt;&gt;= <span class="number">1</span>; )</span><br><span class="line">            c[idx] = op(c[idx &lt;&lt; <span class="number">1</span>], c[idx &lt;&lt; <span class="number">1</span> | <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</span><br><span class="line">    <span class="function">U <span class="title">query</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, U init = <span class="number">0</span>)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (l += size, r += size; l &lt; r; l &gt;&gt;= <span class="number">1</span>, r &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (l &amp; <span class="number">1</span>) init = op(init, c[l++]);</span><br><span class="line">            <span class="keyword">if</span> (r &amp; <span class="number">1</span>) init = op(init, c[--r]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> init;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constexpr</span> T&amp; <span class="keyword">operator</span>[](<span class="keyword">size_t</span> pos) &#123;</span><br><span class="line">        <span class="keyword">return</span> c[pos];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">constexpr</span> <span class="keyword">const</span> T&amp; <span class="keyword">operator</span>[](<span class="keyword">size_t</span> pos) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> c[pos];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>리프 노드를 초기화하고 나면 build() 메서드를 통해 세그먼트 트리를 구축해야 합니다.</p>
+<figure class="highlight c++"><figcaption><span>선언</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SegmentTree&lt;<span class="keyword">int</span>&gt; tree;         <span class="comment">// 기본형 합 세그먼트 트리</span></span><br><span class="line">SegmentTree&lt;<span class="keyword">int</span>, <span class="number">300000</span>&gt; tree; <span class="comment">// 크기 30만으로 선언</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> ll = <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">min_</span> &#123;</span></span><br><span class="line">    <span class="function">ll <span class="title">operator</span><span class="params">()</span><span class="params">(ll a, ll b)</span> </span>&#123; <span class="keyword">return</span> min(a, b); &#125;</span><br><span class="line">&#125;</span><br><span class="line">SegmentTree&lt;ll, <span class="number">100000</span>, min_&gt; tree; <span class="comment">// long long형 min 세그먼트 트리</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><figcaption><span>초기화</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SegmentTree&lt;<span class="keyword">int</span>&gt; <span class="title">tree</span><span class="params">(N)</span></span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) <span class="built_in">cin</span> &gt;&gt; tree[N + i];</span><br><span class="line">tree.build();</span><br></pre></td></tr></table></figure>
+<h1 id="시간복잡도"><a class="markdownIt-Anchor" href="#시간복잡도"></a> 시간복잡도</h1>
+<h2 id="build"><a class="markdownIt-Anchor" href="#build"></a> build()</h2>
+<p>실제 리프 노드의 개수가 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>개라면 구축 비용은 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>입니다.<br>
+단 한 번만 사용되는 연산이므로 그렇게 무겁지 않다고 할 수 있습니다.</p>
+<h2 id="updatex-val"><a class="markdownIt-Anchor" href="#updatex-val"></a> update(x, val)</h2>
+<p>리프 노드부터 루트 노드까지 타고 올라가면서 값을 조정하므로 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>입니다.</p>
+<h2 id="queryl-r"><a class="markdownIt-Anchor" href="#queryl-r"></a> query(l, r)</h2>
+<p>update와 마찬가지로 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>입니다.</p>
+
     </div>
 
     
@@ -412,21 +405,18 @@ C++에서는 std::string 생성자를 이용하면 됩니다.</p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/bit-masking/" rel="tag"><i class="fa fa-tag"></i> bit masking</a>
+              <a href="/tags/tree/" rel="tag"><i class="fa fa-tag"></i> tree</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/boj-3487/" rel="prev" title="BOJ-3487, Copying Books">
-                  <i class="fa fa-chevron-left"></i> BOJ-3487, Copying Books
+                <a href="/char-trick/" rel="prev" title="C/C++ 문자 처리 기술">
+                  <i class="fa fa-chevron-left"></i> C/C++ 문자 처리 기술
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/segment-tree/" rel="next" title="세그먼트 트리">
-                  세그먼트 트리 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -568,9 +558,9 @@ C++에서는 std::string 생성자를 이용하면 됩니다.</p>
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://yundev.ga/char-trick/";
-    this.page.identifier = "char-trick/";
-    this.page.title = "C/C++ 문자 처리 기술";
+    this.page.url = "https://yundev.ga/segment-tree/";
+    this.page.identifier = "segment-tree/";
+    this.page.title = "세그먼트 트리";
     };
   NexT.utils.loadComments('#disqus_thread', () => {
     if (window.DISQUS) {
