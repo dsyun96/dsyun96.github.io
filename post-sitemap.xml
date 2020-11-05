@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://yundev.ga/boj-2091/</loc>
+        <lastmod>2020-11-05T01:41:40.064Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://yundev.ga/segment-tree/</loc>
         <lastmod>2020-11-04T04:24:55.420Z</lastmod>
         <changefreq>weekly</changefreq>
